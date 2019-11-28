@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Usman Idowu Preliminary Interview Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/form.css" />
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <h1>Bincom Interview Test</h1>
+    <p>Store Result for all parties</p>
+    <hr>
+    <p>Click to view various answers</p>
+    <div class="clicks">
+      <a href="/">Back To Home</a>
+      <a href="/pu_results">Individual Polling Unit Result</a>
+    <a href="/summed_tpu_results">Summed Total Result Of All Polling Unit</a>
+    </div>
+    <div class="form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                    <h2 style="margin:0; color:green">Enter party scores per polling unit</h2>
+                    <h4 style="margin:0;color:green;font-weight:bold"><%=msg %></h4>
+                </div>
+                <div class="row clearfix">
+                    <div class="">
+                        <form method="POST"  action="/store_result">
+                            <% party.forEach(function(result){ %>
+                              <h4><%=result.partyname %>:</h4>
+                              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                <input type="number" name="<%=result.partyname %>" placeholder="Score" required />
+                            </div>
+                            <% }); %>
+                            
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <input type="text" name="pu" placeholder="Polling Unit Name" required />
+                            </div>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <input type="number" name="polling_unit_uniqueid" placeholder="polling_unit_id" required />
+                            </div>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                <input type="text" name="entered_by_user" placeholder="entered by" required />
+                            </div>
+                            <input class="button" type="submit" value="Store Result" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>

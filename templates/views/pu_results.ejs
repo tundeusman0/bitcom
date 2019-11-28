@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Usman Idowu Preliminary Interview Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <h1>Bincom Interview Test</h1>
+    <p>Individual Polling Unit Result for 2011 general election</p>
+    <hr>
+    <p>Click to view various answers</p>
+    <div class="clicks">
+      <a href="/">Back To Home</a>
+      <a href="/summed_tpu_results">Summed Total Result Of All Polling Unit</a>
+    <a href="/store_result">Store Result of All Parties</a>
+    </div>
+    <hr>
+    <table class="container">
+      <thead>
+        <tr>
+          <th>
+            <h1>result_id</h1>
+          </th>
+          <th>
+            <h1>polling_unit_id</h1>
+          </th>
+          <th>
+            <h1>Party</h1>
+          </th>
+          <th>
+            <h1>Party Score</h1>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+    <% Pollings.forEach(function(result){ %>
+        <tr>
+            <td><%=result.result_id %></td>
+            <td><%=result.polling_unit_uniqueid %></td>
+            <td><%=result.party_abbreviation %></td>
+            <td><%=result.party_score %></td>
+        </tr>
+    <% }); %>
+    </tbody>
+    </table>
+  </body>
+</html>

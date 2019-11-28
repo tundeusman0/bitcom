@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Usman Idowu Preliminary Interview Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <h1>Bincom Interview Test</h1>
+    <p>Summed results for all Polling Unit</p>
+    <hr>
+    <p>Click to view various answers</p>
+    <div class="clicks">
+      <a href="/">Back To Home</a>
+      <a href="/pu_results">Individual Polling Unit Result</a>
+    <a href="/store_result">Store Result of All Parties</a>
+    </div>
+    <hr>
+    <div class="selecting">
+      <select id="q-rank" onchange="setStats()">
+    <% lgaResults.forEach(function(result){ %>
+    <option value="2"><%=result.lga_description %></option>
+    <% }); %>
+</select>
+    </div>
+    
+    
+  </body>
+  <script type="text/javascript">
+  </script>
+</html>
